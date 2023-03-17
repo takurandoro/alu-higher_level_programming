@@ -12,15 +12,19 @@ class Rectangle():
         __height (int): height of rectangle
 
     """
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        """Instantiation of sides of rectangle
+        """Increments number of instances,
+        Instantiation of sides of rectangle
 
         Args:
             width (int): width of rectangle
             height(int): height of rectangle
 
         """
+        type(self).number_of_instances += 1
+
         self.width = width
         self.height = height
 
@@ -131,9 +135,10 @@ class Rectangle():
         """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
-    @staticmethod
+    @clsmethod
     def __del__():
         """printts message upon deletion of rectangle
 
         """
+        cls.number_of_instances -= 1
         print("Bye rectangle...")
