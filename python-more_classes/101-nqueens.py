@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 import sys
+
+
 def is_valid(board, row, col):
     for r, c in board:
         if c == col or r + c == row + col or r - c == row - col:
             return False
     return True
+
+
 def nqueens_helper(n, row, board, solutions):
     if row == n:
         solutions.append(board.copy())
@@ -14,6 +18,8 @@ def nqueens_helper(n, row, board, solutions):
                 board.append((row, col))
                 nqueens_helper(n, row + 1, board, solutions)
                 board.pop()
+
+
 def nqueens(n):
     if not isinstance(n, int):
         print("N must be a number")
