@@ -1,30 +1,15 @@
->>> MyList = _import_('1-my_list').MyList
+#!/usr/bin/python3
 
->>> new_list = MyList()
+"""Implements a list with a print_sorted method
+Classes:
+    - MyList
+"""
 
->>> new_list
-[]
 
->>> new_list.print_sorted()
-[]
-
->>> new_list.append(4)
-
->>> new_list
-[4]
-
->>> new_list.append(2)
-
->>> new_list
-[4, 2]
-
->>> new_list.append(-1)
-
->>> new_list
-[4, 2, -1]
-
->>> new_list.print_sorted()
-[-1, 2, 4]
-
->>> new_list
-[4, 2, -1]
+class MyList(list):
+    """ Like a list but with a print_sorted method"""
+    def print_sorted(self):
+        """Prints the list sorted in ascending order"""
+        list_copy = self.copy()
+        list_copy.sort()
+        print(list_copy)
