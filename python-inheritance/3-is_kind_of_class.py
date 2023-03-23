@@ -19,4 +19,4 @@ def is_kind_of_class(obj, a_class):
     """
     is_class = type(obj) == a_class
     is_sub_class = issubclass(type(obj), a_class)
-    return is_class or is_sub_class 
+    return is_class or is_sub_class

@@ -1,24 +1,14 @@
 #!/usr/bin/python3
-"""
-Implements MyInt class
-Classes:
-    MyInt
-"""
+"""Rebel int"""
 
 
 class MyInt(int):
-    """
-    MyInt class
-    Custom int class with unexpected behaviours
-    """
-    def __eq__(self, other):
-        if type(other) == int:
-            other = self.__class__(other)
+    """Rebel int class"""
 
-        return self != other
+    def __eq__(self, other):
+        """not equal when =="""
+        return super().__ne__(other)
 
     def __ne__(self, other):
-        if type(other) == int:
-            other = self.__class__(other)
-
-        return self == other
+        """equal when !="""
+        return super().__eq__(other)
