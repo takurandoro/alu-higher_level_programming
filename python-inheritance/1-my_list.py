@@ -1,15 +1,11 @@
 #!/usr/bin/python3
-
-"""Implements a list with a print_sorted method
-Classes:
-    - MyList
-"""
+""" Write a class MyList that inherits from list: """
 
 
 class MyList(list):
-    """ Like a list but with a print_sorted method"""
+    """ Sorts lists object """
+
     def print_sorted(self):
-        """Prints the list sorted in ascending order"""
-        list_copy = self.copy()
-        list_copy.sort()
-        print(list_copy)
+        copy_list = self[:]
+        copy_list.sort()
+        print('{}'.format(copy_list))
